@@ -1,0 +1,43 @@
+name: Opportunity scout (review before publish)
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Generate reviewed-source candidates
+        run: node scripts/opportunity-scout.mjs
+
+      - name: Open a review PR only when the list changed
+        shell: bash
+        run: |
+          if git diff --quiet -- data/opportunities.json; then
+            echo "No candidate changes to review."
+            exit 0
+          fi
+          branch="automation/opportunity-scout-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data/opportunities.json
+          git commit -m "chore: refresh opportunity candidates"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "Review: opportunity refresh" --body "AI-assisted candidate refresh from an official-domain allowlist. **Do not merge blindly.** Verify each deadline, eligibility rule and funding claim on its linked official source. Merging this PR publishes the revised list on the next Pages deployment."
