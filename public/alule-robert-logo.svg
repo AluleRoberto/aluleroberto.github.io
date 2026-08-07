@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 160" role="img" aria-labelledby="title desc">
+  <title id="title">Alule Robert</title>
+  <desc id="desc">Alule Robert bioscience, research and education logo</desc>
+  <rect x="18" y="18" width="124" height="124" rx="38" fill="#0b2742"/>
+  <path d="M53 111 77 51c1-2 4-2 5 0l24 60" fill="none" stroke="#7de0c3" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 86h30" fill="none" stroke="#f2bd5a" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="109" cy="55" r="8" fill="#f2bd5a"/>
+  <text x="172" y="79" fill="#0b2742" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="-1">Alule Robert</text>
+  <text x="174" y="108" fill="#61717e" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="2.2">BIOSCIENCE · RESEARCH · EDUCATION</text>
+</svg>

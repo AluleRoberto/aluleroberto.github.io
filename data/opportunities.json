@@ -1,0 +1,62 @@
+[
+  {
+    "title": "In-Country / In-Region Programme — 2027 calls",
+    "provider": "DAAD",
+    "region": "Africa",
+    "level": "Masters",
+    "status": "Open",
+    "deadline": "Varies by programme",
+    "note": "Postgraduate routes at selected African institutions. Check the programme page for the exact subject, host and deadline.",
+    "href": "https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/in-countryin-region-programme-in-developing-countries/"
+  },
+  {
+    "title": "AI4D Master's Fellowships",
+    "provider": "Makerere AI Lab",
+    "region": "Uganda",
+    "level": "Masters",
+    "status": "Closing soon",
+    "deadline": "10 Aug 2026",
+    "note": "A time-sensitive Makerere opportunity. Confirm the current call and eligibility on the official AI Lab channel before submitting.",
+    "href": "https://air.ug/"
+  },
+  {
+    "title": "College of Health Sciences opportunities",
+    "provider": "Makerere University",
+    "region": "Uganda",
+    "level": "All levels",
+    "status": "Watchlist",
+    "deadline": "New calls vary",
+    "note": "Scholarships, research training and graduate calls published by Makerere College of Health Sciences.",
+    "href": "https://chs.mak.ac.ug/page/opportunities"
+  },
+  {
+    "title": "Grants & bursaries for molecular bioscience",
+    "provider": "Biochemical Society",
+    "region": "International",
+    "level": "All levels",
+    "status": "Funding hub",
+    "deadline": "Scheme dependent",
+    "note": "Travel, lab visits, events and other member funding. Membership and waiting-period rules can apply.",
+    "href": "https://www.biochemistry.org/grants-and-awards/grants-and-bursaries/"
+  },
+  {
+    "title": "PhD fellowships",
+    "provider": "TWAS",
+    "region": "International",
+    "level": "PhD",
+    "status": "Watchlist",
+    "deadline": "Programme dependent",
+    "note": "Fellowship routes for scientists from developing countries across several host countries. Individual calls open on different cycles.",
+    "href": "https://twas.org/opportunities/fellowships/phd"
+  },
+  {
+    "title": "Scholarship database",
+    "provider": "DAAD",
+    "region": "International",
+    "level": "All levels",
+    "status": "Funding hub",
+    "deadline": "Search live listings",
+    "note": "Use the official database to filter funding by country, programme level and subject rather than relying on forwarded posters.",
+    "href": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/"
+  }
+]
