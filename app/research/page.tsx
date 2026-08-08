@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <SiteShell>
-      <main>
+      <main id="main-content">
         <header className="page-hero shell">
           <p className="eyebrow">Research · Biochemistry · Systems biology</p>
           <h1>Questions first.<br /><em>Methods second.</em></h1>

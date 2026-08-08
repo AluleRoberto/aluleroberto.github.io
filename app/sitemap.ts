@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return paths.map((path) => ({
     url: `https://alulerobert.me${path}`,
-    lastModified: new Date("2026-08-07"),
+    lastModified: new Date("2026-08-08"),
     changeFrequency: path === "/opportunities" ? "weekly" : path.startsWith("/resources") ? "monthly" : "yearly",
     priority: path === "" ? 1 : path === "/opportunities" || path === "/resources" ? 0.8 : 0.6,
   }));

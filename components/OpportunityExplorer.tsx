@@ -49,6 +49,7 @@ export function OpportunityExplorer() {
               key={filter}
               type="button"
               className={region === filter ? "filter-chip active" : "filter-chip"}
+              aria-pressed={region === filter}
               onClick={() => setRegion(filter)}
             >
               {filter}

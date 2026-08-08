@@ -1,16 +1,31 @@
 # GitHub Pages hand-off — alulerobert.me
 
-This codebase has a dedicated fully static build (`npm run build:github`). It was designed for the existing `robertalule/robertalule.github.io` site and keeps `public/CNAME` set to `alulerobert.me`.
+The migration is complete. Production now lives in `AluleRoberto/AluleRoberto.github.io`, deploys a fully static build with `npm run build:github`, and serves the custom domain `https://alulerobert.me` with HTTPS enforced.
 
-## Safe migration
+## Current production setup — keep this stable
 
-1. In the current GitHub repository, create a backup branch from the existing site (for example `pre-redesign-2026-08`). Do not delete the old branch until the new site is confirmed live.
-2. On a new branch such as `site-redesign`, replace the old Minima/Jekyll source with this package. Keep the supplied `.github`, `app`, `components`, `data`, `public`, and `scripts` folders plus the root configuration files.
-3. Run locally with Node 22: `npm ci` then `npm run build:github`. A successful build creates `out/`. The build should list all routes as static (`○`).
-4. Push the branch, review it, then merge to `main`.
-5. In **Repository → Settings → Pages**, select **GitHub Actions** as the build/deployment source. The supplied `deploy-github-pages.yml` builds and deploys `out/` on every push to `main`.
-6. Because the current site already uses `alulerobert.me`, normally leave working DNS records alone. The supplied `CNAME` preserves the custom domain. If GitHub reports a domain problem, follow GitHub's current custom-domain instructions rather than guessing DNS values.
-7. After deployment, test `/`, `/research/`, `/opportunities/`, `/resources/`, `/student-guide/`, `/biochemical-society/` and `/cv/` on both phone and desktop.
+- **GitHub repository:** `AluleRoberto/AluleRoberto.github.io`
+- **Pages source:** GitHub Actions
+- **Deployment workflow:** `.github/workflows/deploy-github-pages.yml`
+- **Node version:** 22
+- **Custom domain:** `alulerobert.me`
+- **DNS provider:** Cloudflare is authoritative for the domain.
+- **Apex DNS:** the four GitHub Pages A records should remain DNS-only (grey cloud).
+- **`www`:** CNAME to `aluleroberto.github.io`, also DNS-only.
+- **Domain verification:** keep the `_github-pages-challenge-AluleRoberto` TXT record unless GitHub explicitly documents that it is no longer required.
+- **HTTPS:** keep **Enforce HTTPS** enabled in Repository → Settings → Pages.
+
+Do not move the domain back to the previous GitHub account while this repository is live. Keep the previous account/repository only as a backup until you are satisfied with the new site.
+
+## Safe update procedure
+
+1. Upload or commit the changed source files to `AluleRoberto/AluleRoberto.github.io`.
+2. Keep `public/CNAME` as `alulerobert.me` and do not change working Cloudflare DNS during an ordinary content update.
+3. If working locally, use Node 22 and run `npm ci` followed by `npm run build:github`. A successful build creates `out/` and lists the site routes as static (`○`).
+4. Push to `main`. The Pages workflow builds and deploys `out/` automatically.
+5. In **Actions → Deploy alulerobert.me**, wait for both `build` and `deploy` to turn green.
+6. Open `https://alulerobert.me` in a private/incognito window and test `/research/`, `/opportunities/`, `/resources/`, `/student-guide/`, `/biochemical-society/` and `/cv/` on phone and desktop.
+7. If a deployment fails, inspect the failed Actions step before changing DNS. A build failure and a DNS failure are different problems.
 
 Official references: [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 

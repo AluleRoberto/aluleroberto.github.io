@@ -11,6 +11,9 @@ const nav = [
 export function SiteHeader() {
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <div className="shell nav-wrap">
         <a href="/" className="brand-link" aria-label="Alule Robert — home">
           <BrandLogo />
@@ -64,7 +67,7 @@ export function SiteFooter() {
         <div>
           <p className="footer-heading">Connect</p>
           <a href="mailto:contact@alulerobert.me">contact@alulerobert.me</a>
-          <a href="https://github.com/robertalule" target="_blank" rel="noreferrer">
+          <a href="https://github.com/AluleRoberto" target="_blank" rel="noreferrer">
             GitHub
           </a>
           <a href="https://www.linkedin.com/in/AluleRobert" target="_blank" rel="noreferrer">

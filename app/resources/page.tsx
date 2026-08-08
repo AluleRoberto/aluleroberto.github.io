@@ -13,7 +13,7 @@ const collections = [
 export default function ResourcesPage() {
   return (
     <SiteShell>
-      <main>
+      <main id="main-content">
         <header className="page-hero shell compact-hero">
           <p className="eyebrow">Library · Uganda-focused · Teacher-curated</p>
           <h1>Useful material,<br /><em>not a file dump.</em></h1>

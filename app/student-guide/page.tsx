@@ -16,7 +16,7 @@ const frictions = [
 export default function StudentGuidePage() {
   return (
     <SiteShell>
-      <main>
+      <main id="main-content">
         <header className="page-hero shell student-hero">
           <div><p className="eyebrow">For biological-sciences students</p><h1>Reality check.<br /><em>Then move.</em></h1><p className="page-lede">A practical guide for turning constraints into a clearer plan—especially if you are studying in Uganda and want stronger research, postgraduate or scholarship options.</p><a className="button button-primary" href="#swot">Build my SWOT ↓</a></div>
           <figure className="guide-photo image-frame"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mobile_Teaching_Laboratory.jpg/960px-Mobile_Teaching_Laboratory.jpg" alt="A mobile teaching laboratory in Lwengo District, Uganda" /><figcaption>Mobile teaching laboratory, Lwengo District, Uganda · CC BY-SA 3.0</figcaption></figure>

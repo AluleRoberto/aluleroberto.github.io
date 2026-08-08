@@ -36,17 +36,33 @@ export function SwotPlanner() {
   });
   const [copied, setCopied] = useState(false);
 
-  async function copyPlan() {
+  function formattedPlan() {
     const summary = (Object.keys(prompts) as SwotKey[])
       .map((key) => `${prompts[key].label.toUpperCase()}\n${values[key] || "—"}`)
       .join("\n\n");
+    return `MY BIOSCIENCE SWOT\n\n${summary}`;
+  }
+
+  async function copyPlan() {
     try {
-      await navigator.clipboard.writeText(`MY BIOSCIENCE SWOT\n\n${summary}`);
+      await navigator.clipboard.writeText(formattedPlan());
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
     } catch {
       window.print();
     }
+  }
+
+  function downloadPlan() {
+    const blob = new Blob([formattedPlan()], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "my-bioscience-swot.txt";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -56,9 +72,14 @@ export function SwotPlanner() {
           <p className="eyebrow">Interactive worksheet</p>
           <h2 id="swot-tool-title">Build your own SWOT.</h2>
         </div>
-        <button className="button button-primary" type="button" onClick={copyPlan}>
-          {copied ? "Copied" : "Copy my SWOT"}
-        </button>
+        <div className="tool-actions">
+          <button className="button button-primary" type="button" onClick={copyPlan}>
+            {copied ? "Copied" : "Copy my SWOT"}
+          </button>
+          <button className="button button-quiet" type="button" onClick={downloadPlan}>
+            Download .txt
+          </button>
+        </div>
       </div>
       <div className="swot-grid">
         {(Object.keys(prompts) as SwotKey[]).map((key) => (
@@ -74,7 +95,7 @@ export function SwotPlanner() {
           </label>
         ))}
       </div>
-      <p className="tool-note">Nothing entered here is uploaded or stored by this website. Copy your plan before leaving the page.</p>
+      <p className="tool-note">Nothing entered here is uploaded or stored by this website. Copy or download your plan before leaving the page.</p>
     </section>
   );
 }

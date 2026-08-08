@@ -7,14 +7,14 @@ export const metadata: Metadata = { title: "Biological Sciences Opportunities", 
 export default function OpportunitiesPage() {
   return (
     <SiteShell>
-      <main>
+      <main id="main-content">
         <header className="page-hero shell compact-hero">
           <p className="eyebrow">Uganda first · Africa next · world open</p>
           <h1>Opportunity should be<br /><em>searchable.</em></h1>
           <p className="page-lede">A curated starting point for scholarships, research training, fellowships and bioscience funding. Every listing points back to an official source so you can verify eligibility, dates and terms yourself.</p>
         </header>
         <section className="section shell opportunity-section">
-          <div className="freshness-banner"><div><span className="live-dot" /><strong>Listings reviewed 7 Aug 2026</strong></div><p>“Watchlist” means the source is worth monitoring; it does not mean applications are open today.</p></div>
+          <div className="freshness-banner"><div><span className="live-dot" /><strong>Listings reviewed 8 Aug 2026</strong></div><p>“Watchlist” means the source is worth monitoring; it does not mean applications are open today.</p></div>
           <OpportunityExplorer />
         </section>
         <section className="section page-section project-band">

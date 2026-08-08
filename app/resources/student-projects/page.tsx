@@ -15,7 +15,7 @@ const projects = [
 
 export default function ProjectsResources() {
   return (
-    <SiteShell><main>
+    <SiteShell><main id="main-content">
       <header className="page-hero shell compact-hero"><p className="eyebrow">Resource library / Project studio</p><h1>Small question.<br /><em>Clean experiment.</em></h1><p className="page-lede">Good school projects do not need expensive equipment. They need a focused question, one defensible comparison, honest measurements and a conclusion that stays inside the evidence.</p></header>
       <section className="section shell"><div className="project-idea-grid">{projects.map(([title, cost, text], index) => <article key={title}><div><span>{String(index + 1).padStart(2, "0")}</span><span>{cost}</span></div><h2>{title}</h2><p>{text}</p><a href="mailto:contact@alulerobert.me?subject=Student%20project%20question">Discuss an adaptation →</a></article>)}</div></section>
       <section className="section page-section soft-section"><div className="shell"><div className="section-heading"><p className="eyebrow">Project downloads</p><h2>Robert's published project files.</h2><p>Templates and project sheets added to the project folder appear here on the next deployment.</p></div><UploadedResources collection="student-projects" /></div></section>

@@ -6,7 +6,7 @@ const makChemistryPhoto =
 export default function Home() {
   return (
     <SiteShell>
-      <main>
+      <main id="main-content">
         <section className="hero shell">
           <div className="hero-copy">
             <p className="eyebrow">Researcher · Educator · Student Ambassador</p>
